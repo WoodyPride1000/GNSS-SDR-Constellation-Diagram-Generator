@@ -57,10 +57,13 @@ python3 scripts/realtime_plot.py
 GNSS-SDR公式ドキュメント
 
 ---
-
-## 📄 `requirements.txt`
-
-```txt
-numpy
-matplotlib
+### GNSS-SDR設定
+- `front-end-cal.conf`は、GPS L1 C/A信号のオフライン処理用設定ファイルです。
+- 主要設定：
+  - `SignalSource.filename`: キャプチャファイル（例: `../capture/capture.dat`）を配置。
+  - `dump_filename=tracking_PRN_`: PRNごとのI/Qデータ（`tracking_PRN_XX.dat`）を生成。
+- 実行：
+  ```bash
+  gnss-sdr --config_file=front-end-cal.conf
 ```
+
